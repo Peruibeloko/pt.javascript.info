@@ -116,13 +116,13 @@ Object.defineProperty(user, "name", {
 });
 
 *!*
-user.name = "Pete"; // Error: Cannot assign to read only property 'name'... (Erro: não é possível a atribuição à variável de apenas leitura 'name'...)
+user.name = "Pete"; // Erro: Não é possível realizar atribuição à variável de apenas leitura 'name'
 */!*
 ```
 
 Agora, ninguém pode alterar o nome do nosso usuário, a não ser que eles apliquem seus próprios `defineProperty` para sobrescrever o nosso.
 
-```smart header="Erros aparecem apenas em strict mode"
+```smart header="Erros aparecem apenas no modo estrito"
 No modo não-estrito, os erros não ocorrem quando escrevendo em propriedades não-graváveis, etc. Mas a operação ainda assim não terá sucesso. Ações que violam os sinalizadores são apenas ignoradas silenciosamentes em modo não-estrito. 
 ```
 
@@ -141,9 +141,8 @@ Object.defineProperty(user, "name", {
 });
 
 alert(user.name); // John
-user.name = "Alice"; // Erro
+user.name = "Pete"; // Erro
 ```
-
 
 ## Não-enumerável
 
